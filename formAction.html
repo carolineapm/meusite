@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Recebido</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="form.html">Formulário</a></li>
+                <li><a href="about.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Dados Recebidos</h1>
+        <p id="result"></p>
+    </main>
+    <script src="scripts/main.js"></script>
+    <script>
+        // Exibir dados recebidos via método GET
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const email = params.get('email');
+            const age = params.get('age');
+
+            document.getElementById('result').innerText = `Nome: ${name}\nEmail: ${email}\nIdade: ${age}`;
+        }
+    </script>
+</body>
+</html>
